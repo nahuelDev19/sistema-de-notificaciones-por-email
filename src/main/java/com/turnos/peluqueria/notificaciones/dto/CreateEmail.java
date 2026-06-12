@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data @AllArgsConstructor @NoArgsConstructor
 @Builder
 public class CreateEmail {
@@ -12,7 +14,7 @@ public class CreateEmail {
 
 
     private String from;
-    private String to;
+    private List<String> to;
     private String subject;
     private String html;
 
