@@ -21,9 +21,6 @@ public class NotificacionService {
     private String apiUrl;
     private final RestTemplate restTemplate;
 
-
-
-
     public CreateEmailResponse enviarRecordatorio(TurnoDTO turno) {
 
 
