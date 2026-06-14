@@ -30,9 +30,17 @@ public class TurnoNotificacionScheduler {
         LocalDateTime hasta = LocalDateTime.now().plusHours(2);
 
         List<Turno> turnos = turnoRepository.findTurnosProximos(desde, hasta);
-
+        /*
         turnos.stream()
                 .map(TurnoDTO::new)
                 .forEach(notificacionService::enviarRecordatorio);
+        */
+        turnos.forEach(turno -> {
+            notificacionService.enviarRecordatorio(new TurnoDTO(turno));
+            turno.setRecordatorioEnviado(true);
+            turnoRepository.save(turno);
+        });
+
+
     }
 }

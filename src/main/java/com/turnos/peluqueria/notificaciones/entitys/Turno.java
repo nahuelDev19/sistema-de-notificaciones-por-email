@@ -1,7 +1,6 @@
 package com.turnos.peluqueria.notificaciones.entitys;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 
 import java.time.LocalDateTime;
 
@@ -26,6 +25,8 @@ public class Turno {
     @JoinColumn(name = "peluquero_id")
     private Peluquero peluquero;
 
+    private boolean recordatorioEnviado= false;
+
     public Long getId() { return id; }
 
     public void setId(Long id) { this.id = id; }
@@ -45,4 +46,12 @@ public class Turno {
     public Peluquero getPeluquero() { return peluquero; }
 
     public void setPeluquero(Peluquero peluquero) { this.peluquero = peluquero; }
+
+    public boolean isRecordatorioEnviado() {
+        return recordatorioEnviado;
+    }
+
+    public void setRecordatorioEnviado(boolean recordatorioEnviado) {
+        this.recordatorioEnviado = recordatorioEnviado;
+    }
 }

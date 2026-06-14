@@ -24,6 +24,7 @@ public interface TurnoRepository extends JpaRepository<Turno, Long> {
     // Para el cron — trae turnos CONFIRMADOS en el rango de tiempo indicado
     @Query("SELECT t FROM Turno t JOIN FETCH t.cliente JOIN FETCH t.peluquero " +
             "WHERE t.estado = 'CONFIRMADO' " +
+            "AND t.recordatorioEnviado = false " +
             "AND t.fechaHora BETWEEN :desde AND :hasta")
     List<Turno> findTurnosProximos(
             @Param("desde") LocalDateTime desde,

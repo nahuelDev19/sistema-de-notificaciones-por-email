@@ -14,6 +14,7 @@ public class TurnoDTO {
     private String nombrePeluquero;
     private String emailCliente;
 
+
     public TurnoDTO(Turno turno) {
         this.id = turno.getId();
         this.fechaHora = turno.getFechaHora();
@@ -41,7 +42,6 @@ public class TurnoDTO {
     public void setEmailCliente(String emailCliente) {
         this.emailCliente = emailCliente;
     }
-
 
 
 }
