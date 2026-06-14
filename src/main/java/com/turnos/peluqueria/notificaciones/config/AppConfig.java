@@ -18,7 +18,6 @@ public class AppConfig {
 
     @Bean
     public RestTemplate restTemplate(){
-    System.out.println(">>> API KEY cargada: " + apiKey); // ⚠️ solo para debug, sacalo después
         RestTemplate restTemplate = new RestTemplate();
 
         restTemplate.getInterceptors().add((request, body, execution) -> {

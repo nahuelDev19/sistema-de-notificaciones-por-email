@@ -49,22 +49,7 @@ public class NotificacionService {
     }
 
 
-   /* private String formatoHtml(TurnoDTO turnoDTO){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        String fecha = turnoDTO.getFechaHora().format(formatter);
-        return  """
-    <html>
-        <body>
-            <h2>Recordatorio de turno</h2>
-            <p>Hola,</p>
-            <p>Le recordamos que tiene un turno programado para:</p>
-            <p><strong>%s</strong></p>
-            <p>Por favor, asegúrese de asistir en el horario indicado.</p>
-            <p>Saludos.</p>
-        </body>
-    </html>
-    """.formatted(fecha);
-    }*/
+
 
     private String formatoHtml(TurnoDTO turnoDTO) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
@@ -117,19 +102,7 @@ public class NotificacionService {
                 );
     }
 
-    // Por ahora loguea en consola
-    // En el futuro acá se integraría WhatsApp, email, SMS, etc.
-    /*
-    public void enviarRecordatorio(TurnoDTO turno) {
-        System.out.println("==============================");
-        System.out.println("RECORDATORIO DE TURNO");
-        System.out.println("Cliente : " + turno.getNombreCliente());
-        System.out.println("Teléfono: " + turno.getTelefonoCliente());
-        System.out.println("Peluquero: " + turno.getNombrePeluquero());
-        System.out.println("Fecha/Hora: " + turno.getFechaHora());
-        System.out.println("==============================");
-    }
-    */
+
 
 
 }
