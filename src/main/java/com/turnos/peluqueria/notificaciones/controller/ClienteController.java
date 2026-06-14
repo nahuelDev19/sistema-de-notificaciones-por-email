@@ -2,6 +2,7 @@ package com.turnos.peluqueria.notificaciones.controller;
 
 import com.turnos.peluqueria.notificaciones.entitys.Cliente;
 import com.turnos.peluqueria.notificaciones.repository.ClienteRepository;
+import com.turnos.peluqueria.notificaciones.service.ClienteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,19 +12,19 @@ import java.util.List;
 @RequestMapping("/api/clientes")
 public class ClienteController {
 
-    private final ClienteRepository clienteRepository;
+    private final ClienteService clienteService;
 
-    public ClienteController(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
+    public ClienteController(ClienteService clienteService) {
+        this.clienteService = clienteService;
     }
 
     @GetMapping
     public ResponseEntity<List<Cliente>> obtenerTodos() {
-        return ResponseEntity.ok(clienteRepository.findAll());
+        return ResponseEntity.ok(clienteService.findAll());
     }
 
     @PostMapping
     public ResponseEntity<Cliente> crear(@RequestBody Cliente cliente) {
-        return ResponseEntity.ok(clienteRepository.save(cliente));
+        return ResponseEntity.ok(clienteService.save(cliente));
     }
 }
